@@ -7,7 +7,7 @@ and a Client App and Secret to authenticate. This is then used in Early Bound Co
    ---------------
    Microsoft.Identity.Client - version 4.45.0
    Microsoft.PowerPlatform.Dataverse.Client - version 1.0.1
-   
+ 
  */
 
 using System.ServiceModel;
@@ -23,7 +23,7 @@ try
     Console.WriteLine("Starting Dataverse connection sample code");
     Console.WriteLine("Creating Connection Objects...");
     var dataverseAuthenticationService = new DataverseAuthenticationService();
-    var dataverseUri = new Uri("https://dev-thorndontech.crm6.dynamics.com");
+    var dataverseUri = new Uri("https://<Org Name>.crmXX.dynamics.com");
 
     try
     {
@@ -112,17 +112,17 @@ public class DataverseAuthenticationService
     /// https://docs.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory
     /// After registering app, you must also add the application as a user in your Dataverse environment and assign a security role.
     /// </remarks>
-    private const string ApplicationId = "134aa53c-8c8d-4f05-88c8-18c0ea543259";
+    private const string ApplicationId = "<Application Registration Id>";
 
     /// <summary>
     /// The Client Secret for the Application Registration
     /// </summary>
-    private const string ClientSecret = "Up48Q~Zp5NHkOlzk0mBf5YumlK.BmFXirv5~4amn";
+    private const string ClientSecret = "<Application Registration Secret>";
 
     /// <summary>
     /// The tenant for the Application Registration and the Dataverse instance
     /// </summary>
-    private const string TenantId = "2312abde-95bd-4d20-b16a-9a96dad3a404";
+    private const string TenantId = "<Tenant ID>";
 
     /// <summary>
     /// The scopes for the Authentication Request
@@ -133,7 +133,7 @@ public class DataverseAuthenticationService
          * The scopes take the form of:
          *  https://<Org Name>.crmXX.dynamics.com/.default
          */
-        "https://dev-thorndontech.crm6.dynamics.com/.default"
+        "https://<Org Name>.crmXX.dynamics.com/.default"
     };
 
     public async Task<string> GenerateBearerTokenAsync(string str)
