@@ -142,7 +142,7 @@ public class DataverseAuthenticationService
     /// <param name="str">The str parameter is not required</param>
     /// <returns>A bearer token for the specified App Id and Secret</returns>
     /// <remarks>The "str" parameter is not needed by the method but is required for the method signature for Dataverse Service Client</remarks>
-    public async Task<string> GenerateBearerTokenAsync(string str)
+    public async Task<string> GenerateBearerTokenAsync(string str = default)
     {
         string bearerToken = null;
         try
